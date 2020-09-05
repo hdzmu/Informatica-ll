@@ -1,4 +1,4 @@
-Comandos git
+Comandos git para la consola
 ls -l (ver archivos)
 git init (crear repositorio)
 git add . (agregar/preparar archivos)
