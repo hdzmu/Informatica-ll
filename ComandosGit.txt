@@ -1,5 +1,4 @@
 Comandos git para el repositorio
-
 ls -l (ver archivos)
 git init (crear repositorio)
 git add . (agregar/preparar archivos)
