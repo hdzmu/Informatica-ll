@@ -6,7 +6,7 @@ int main()
 {
     int A=0, B=0, C=0, ori=0, select=0, res=0, delay=0, con=0, hh=0, mm=0, cond=0, ss=0;
     bool next;
-    double rec=0.0, pot=1, pi=3.1416, resd=0.0, condd=0.0;
+    double rec=0.0, pot=1, pi=3.1416, resd=0.0, condd=0.0, conn=0.0;
     char l, ll;
 
     while (true){
@@ -330,7 +330,41 @@ int main()
                 cout << "EJERCICIO 26" << endl;
                 cout << "Ingrese tres numeros A, B y C" << endl;
                 cin >> A >> B >> C;
-                if (A==B && A==C && B==C) cout ""
+                if (A>B+C || B>A+C || C>A+B) cout << "Las longitudes ingresadas no forman un triangulo" << endl;
+                else if (A<B-C || B<A-C || C<A-B) cout << "Las longitudes ingresadas no forman un triangulo" << endl;
+                else if (A==B && A==C && B==C) cout << "Equilatero" << endl;
+                else if (A==B || A==C || B==C) cout << "Isosceles" << endl;
+                else if (A!=B || A!=C || B!=C) cout << "Escaleno" << endl;
+            break;
+            case 27:
+                cout << "EJERCICIO 27" << endl;
+                cout << "Ingrese un numero A, un operador y un numero C" << endl;
+                cin >> A >> l >> C;
+                res=0;
+                if (l=='+') cout << "el resultado es: " << A+C << endl;
+                else if (l=='-') cout << "el resultado es: " << A-C << endl;
+                else if (l=='*') cout << "el resultado es: " << A*C << endl;
+                else if (l=='/' && C!=0) cout << "el resultado es: " << A/C << endl;
+                else cout << "Error" << endl;
+            break;
+            case 28:
+                cout << "EJERCICIO 28" << endl;
+                cout << "Ingrese un numero A" << endl;
+                cin >> A;
+                A-=1;
+                resd=0.0;
+                conn=-3.0;
+                condd=0.0;
+                for (con=0;con<A;con++){
+                    condd=1.0/conn;
+                    resd=resd+(condd);
+                    if (conn>0)conn=(conn+2)*(-1);
+                    else conn=(conn-2)*(-1);
+                }
+                cout << 4*(1+resd) << endl;
+            break;
+            case 29:
+
             break;
             case 34:
                 cout << "PROBLEMA 4" << endl;
