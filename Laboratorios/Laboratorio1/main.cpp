@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    int A=0, B=0, C=0, ori=0, select=0, res=0, delay=0, con=0, hh=0, mm=0, cond=0, ss=0, ran=0;
+    int A=0, B=0, C=0, ori=0, select=0, res=0, delay=0, con=0, hh=0, mm=0, cond=0, ss=0, ran=0, cinc=0, vei=0, di=0, cim=0, dosm=0, mil=0, qui=0, doc=0, cien=0, cc=0;
     bool next;
     double rec=0.0, pot=1, pi=3.1416, resd=0.0, condd=0.0, conn=0.0;
     char l, ll;
@@ -396,6 +396,107 @@ int main()
                 }
 
             break;
+            case 31:
+                cout << "PROBLEMA 1" << endl;
+                cout << "Ingrese una letra" << endl;
+                cin >> l;
+                ll=' ';
+                if (l=='A' || l=='B' || l=='C' || l=='D' || l=='E' || l=='F' || l=='G' || l=='H' || l=='I' || l=='J' || l=='K' || l=='L' || l=='M' || l=='N' || l=='O' || l=='P' || l=='Q' || l=='R' || l=='S' || l=='T' || l=='U' || l=='V' || l=='W' || l=='X' || l=='Y' || l=='Z'){
+                    ll=l+32;
+                }
+                else if (l=='a' || l=='b' || l=='c' || l=='d' || l=='e' || l=='f' || l=='g' || l=='h' || l=='i' || l=='j' || l=='k' || l=='l' || l=='m' || l=='n' || l=='o' || l=='p' || l=='q' || l=='r' || l=='s' || l=='t' || l=='u' || l=='v' || l=='w' || l=='x' || l=='y' || l=='z'){
+                        ll=l-32;
+                }
+                if (ll=='a' || ll=='e' || ll=='i' || ll=='o' || ll=='u') cout << "Es vocal " << endl;
+
+                else if (ll=='A' || ll=='E' || ll=='I' || ll=='O' || ll=='U') cout << "Es vocal " << endl;
+
+                else if (ll=='b' || ll=='c' || ll=='d' || ll=='f' || ll=='g' || ll=='h' || ll=='j' || ll=='k' || ll=='l' || ll=='m' || ll=='n' || ll=='p' || ll=='q' || ll=='r' || ll=='s' || ll=='t' || ll=='v' || ll=='w' || ll=='x' || ll=='y' || ll=='z'){
+                    cout << "Es consonante " << endl;
+                }
+                else if (ll=='B' || ll=='C' || ll=='D' || ll=='F' || ll=='g' || ll=='H' || ll=='J' || ll=='K' || ll=='L' || ll=='M' || ll=='N' || ll=='P' || ll=='Q' || ll=='R' || ll=='S' || ll=='T' || ll=='V' || ll=='W' || ll=='X' || ll=='Y' || ll=='Z'){
+                    cout << "Es consonante " << endl;
+                }
+                else cout << "No es una letra" << endl;
+
+            break;
+            case 32:
+                cout << "PROBLEMA 2" << endl;
+                cout << "Ingrese un numero" << endl;
+                cin >> A;
+                B=0;
+                cinc=0, vei=0, di=0, cim=0, dosm=0, mil=0, qui=0, doc=0, cien=0, cc=0;
+                for(;A>=50;A-=B){
+                    if (A>=50000){
+                        B=50000;
+                        cinc+=1;
+                    }
+                    else if (A>=20000 && A<50000){
+                        B=20000;
+                        vei+=1;
+                    }
+                    else if (A>=10000 && A<20000){
+                        B=10000;
+                        di+=1;
+                    }
+                    else if (A>=5000 && A<10000){
+                        B=5000;
+                        cim+=1;
+                    }
+                    else if (A>=2000 && A<5000){
+                        B=2000;
+                        dosm+=1;
+                    }
+                    else if (A>=1000 && A<2000){
+                        B=1000;
+                        mil+=1;
+                    }
+                    else if (A>=500 && A<1000){
+                        B=500;
+                        qui+=1;
+                    }
+                    else if (A>=200 && A<500){
+                        B=200;
+                        doc+=1;
+                    }
+                    else if (A>=100 && A<200){
+                        B=100;
+                        cien+=1;
+                    }
+                    else if (A>=50 && A<100){
+                        B=50;
+                        cc+=1;
+                    }
+                }
+                cout << "50000 : " << cinc << endl;
+                cout << "20000 : " << vei << endl;
+                cout << "10000 : " << di << endl;
+                cout << "5000 : " << cim << endl;
+                cout << "2000 : " << dosm << endl;
+                cout << "1000 : " << mil << endl;
+                cout << "500 : " << qui << endl;
+                cout << "200 : " << doc << endl;
+                cout << "100 : " << cien << endl;
+                cout << "50 : " << cc << endl;
+                cout << "Faltante : " << A << endl;
+            break;
+            case 33:
+                cout << "PROBLEMA 3" << endl;
+                cout << "Ingrese un mes y una fecha" << endl;
+                cin >> A >> B;
+                if (A>=1 && A<=12){
+                    if (B>=1 && B<=31){
+                        if (B==31){
+                            if (A==4 || A==6 || A==8 || A==11) cout << "Fecha invalida" << endl;
+                        }
+                        else if (B==29 && A==2) cout << "Es valida en bisiesto" << endl;
+                        else if (B>29 && A==2) cout << "Fecha invalida" << endl;
+                        else cout << "Fecha valida" << endl;
+                    }
+                    else cout << "Fecha invalida" << endl;
+                }
+                else cout << "Mes invalido"<< endl;
+            break;
             case 34:
                 cout << "PROBLEMA 4" << endl;
                 cout << "Ingrese dos tiempos A y B" << endl;
@@ -466,6 +567,40 @@ int main()
                     cout <<"La hora es " << A;
                 }
 
+            break;
+            case 35:
+                cout << "PROBLEMA 5" << endl;
+                cout << "Ingrese un numero impar" << endl;
+                cin >> A;
+                res=0, ss=0 , mm=0 ,hh=0;
+                l=32;
+                ll=42;
+                if (A%2!=0){
+                    res=(A-1);
+                    for (;res>=0;res-=2){
+                        ss=res/2;
+                        hh=res/2;
+                        mm=A-res;
+                        for(;ss>0;ss--) cout << l;
+                        for (;mm>0;mm--)cout << ll;
+                        for (;hh>0;hh--)cout <<l;
+                        cout << endl;
+                    }
+                    res=A, ss=0 , mm=0 ,hh=0;
+                    for (con=res;con>=0;con-=2){
+                        if (con!=A){
+                            ss=(res-con)/2;
+                            hh=(res-con)/2;
+                            mm=res-ss-hh;
+                            for(;ss>0;ss--)cout << l;
+                            for (;mm>0;mm--)cout << ll;
+                            for (;hh>0;hh--)cout <<l;
+                            cout << endl;
+                        }
+
+                    }
+                }
+                else cout << "No es numero impar" << endl;
             break;
 
             default:
