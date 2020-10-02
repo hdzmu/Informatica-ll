@@ -4,9 +4,10 @@ using namespace std;
 
 int main()
 {
-    int A=0, B=0, C=0, ori=0, select=0, res=0, delay=0, con=0, hh=0, mm=0, cond=0;
+    int A=0, B=0, C=0, ori=0, select=0, res=0, delay=0, con=0, hh=0, mm=0, cond=0, ss=0;
     bool next;
     double rec=0.0, pot=1, pi=3.1416, resd=0.0, condd=0.0;
+    char l, ll;
 
     while (true){
         cout << "\nIngrese el numero del ejercicio a ejecutar" << endl;
@@ -228,6 +229,41 @@ int main()
                 for(;cond>0;cond--) resd*=10;
                 if (int(resd)==A) cout << "Es palindromo" << endl;
                 else cout << "No es palindromo" << endl;
+            break;
+            case 21:
+            cout << "EJERCICIO 21" << endl;
+            cout << "Ingrese una letra" << endl;
+            cin >> l;
+            if (l=='A' || l=='B' || l=='C' || l=='D' || l=='E' || l=='F' || l=='G' || l=='H' || l=='I' || l=='J' || l=='K' || l=='L' || l=='M' || l=='N' || l=='O' || l=='P' || l=='Q' || l=='R' || l=='S' || l=='T' || l=='U' || l=='V' || l=='W' || l=='X' || l=='Y' || l=='Z'){
+                ll=l+32;
+            }
+            else if (l=='a' || l=='b' || l=='c' || l=='d' || l=='e' || l=='f' || l=='g' || l=='h' || l=='i' || l=='j' || l=='k' || l=='l' || l=='m' || l=='n' || l=='o' || l=='p' || l=='q' || l=='r' || l=='s' || l=='t' || l=='u' || l=='v' || l=='w' || l=='x' || l=='y' || l=='z'){
+                    ll=l-32;
+            }
+            cout << ll << endl;
+            break;
+            case 22:
+                cout << "EJERCICIO 22" << endl;
+                cout << "Ingrese segundos" << endl;
+                cin >> A;
+                hh=0;
+                mm=0;
+                ss=0;
+                for(;3600<A;A-=3600) hh+=1;
+                for(;60<A;A-=60){
+                    mm+=1;
+                    if (mm==60) {
+                        mm=0;
+                        hh+=1;
+                    }
+                }
+                ss=ss+A;
+                if (ss==60) {
+                    mm+=1;
+                    ss=0;
+                }
+
+                cout << hh << " : " << mm << " : " << ss << endl;
             break;
             case 34:
                 cout << "PROBLEMA 4" << endl;
