@@ -265,6 +265,73 @@ int main()
 
                 cout << hh << " : " << mm << " : " << ss << endl;
             break;
+            case 23:
+                cout << "EJERCICIO 23" << endl;
+                cout << "Ingrese dos numeros A y B" << endl;
+                cin >> A >> B;
+                res=1;
+                for(con=2;A>1 || B>1;con++){
+                    if(A%con==0 && B%con==0){
+                        res*=con;
+                        A=A/con;
+                        B=B/con;
+                        con=1;
+                    }
+                    else if (A%con==0){
+                        res*=con;
+                        A=A/con;
+                        con=1;
+                    }
+                    else if (B%con==0){
+                        res*=con;
+                        B=B/con;
+                        con=1;
+                    }
+                }
+                cout << "El MCM es: " << res << endl;
+            break;
+            case 24:
+                cout << "EJERCICIO 24" << endl;
+                cout << "Ingrese un numero A" << endl;
+                cin >> A;
+                B=A;
+                l=43;
+                for (con=0;con<=A;con++){
+                    if (con==0){
+                        for(;B>0;B--)cout << l;
+                        cout << endl;
+                        B=A;
+                    }
+                    else if (con==A){
+                        for(;B>0;B--)cout << l;
+                        cout << endl;
+                        B=A;
+                    }
+                    else if (con!=(B-2) && A!=2){
+                        ll=l-11;
+                        cout << l;
+                        B=B-2;
+                        for (;B>0;B--) cout << ll;
+                        cout << l;
+                        cout << endl;
+                        B=A;
+                    }
+                }
+            break;
+            case 25:
+                cout << "EJERCICIO 25" << endl;
+                cout << "Ingrese un numero A" << endl;
+                cin >> A;
+                B=A;
+                for(con=0;A>=1;con++) A=A/10;
+                cout << "El numero " << B << " tiene " << con << " digitos" << endl;
+            break;
+            case 26:
+                cout << "EJERCICIO 26" << endl;
+                cout << "Ingrese tres numeros A, B y C" << endl;
+                cin >> A >> B >> C;
+                if (A==B && A==C && B==C) cout ""
+            break;
             case 34:
                 cout << "PROBLEMA 4" << endl;
                 cout << "Ingrese dos tiempos A y B" << endl;
