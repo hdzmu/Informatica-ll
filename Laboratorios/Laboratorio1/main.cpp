@@ -1,10 +1,11 @@
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
 int main()
 {
-    int A=0, B=0, C=0, ori=0, select=0, res=0, delay=0, con=0, hh=0, mm=0, cond=0, ss=0;
+    int A=0, B=0, C=0, ori=0, select=0, res=0, delay=0, con=0, hh=0, mm=0, cond=0, ss=0, ran=0;
     bool next;
     double rec=0.0, pot=1, pi=3.1416, resd=0.0, condd=0.0, conn=0.0;
     char l, ll;
@@ -364,6 +365,35 @@ int main()
                 cout << 4*(1+resd) << endl;
             break;
             case 29:
+                cout << "EJERCICIO 29" << endl;
+                con=50;
+                while (true) {
+                    cout << "Es " << con << " ?" << endl;
+                    cout << "Ingrese una pista" << endl;
+                    cin >> l;
+                    if (l=='>' && con<=99)con+=1;
+                    else if (l=='<' && con>=1)con-=1;
+                    else if (l=='='){
+                        cout << "Win" << endl;
+                        break;
+                    }
+                    else cout << "Fuera del limite" << endl;
+                }
+            break;
+            case 30:
+                ran=rand()%101;
+                //cout << ran << endl;
+                cout << "EJERCICIO 30" << endl;
+                cin >> A;
+                while(true){
+                    if(A>ran) cout << "Menos" << endl;
+                    else if(A<ran) cout << "Mas" << endl;
+                    else if(A==ran){
+                        cout << "Win" << endl;
+                        break;
+                    }
+                    cin >> A;
+                }
 
             break;
             case 34:
