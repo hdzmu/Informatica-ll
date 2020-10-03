@@ -20,7 +20,7 @@ int main()
                 cout << "Ingrese dos numeros A y B" << endl;
                 cin >> A >> B;
                 res=A%B;
-                cout << A <<" % " << B <<" = " << res << endl;
+                cout << "El residuo de la division "<< A <<" / " << B <<" es =  " << res << endl;
             break;
             //Fin case
             case 2:
@@ -74,20 +74,22 @@ int main()
                 cout << "EJERCICIO 7" << endl;
                 cout << "Ingrese un numero" << endl;
                 cin >> A;
+                B=A;
                 res=0;
                 for(;A>0; A--) res+=A;
-                cout << "El suma de A hasta n es: "<< res << endl;
+                cout << "La sumatoria desde 0 hasta " << B << " es: "<< res << endl;
             break;
             case 8:
                 cout << "EJERCICIO 8" << endl;
                 cout << "Ingrese un numero" << endl;
                 cin >> A;
+                B=A;
                 if (A!=0) {
                     res=1;
                     for(;A>0; A--) res*=A;
                 }
                 else res=1;
-                cout << "El factorial de A es: "<< res << endl;
+                cout << "El factorial de " << B << " es: "<< res << endl;
             break;
             case 9:
                 cout << "EJERCICIO 9" << endl;
@@ -133,6 +135,7 @@ int main()
                 cout << "EJERCICIO 13" << endl;
                 cout << "Ingrese un numero A" << endl;
                 cin >> A;
+                cout <<"Los divisores de " << A << " son: " << endl;
                 for (con=1;con<=A;con++){
                     res=A%con;
                     if (res==0) {
@@ -362,7 +365,7 @@ int main()
                     if (conn>0)conn=(conn+2)*(-1);
                     else conn=(conn-2)*(-1);
                 }
-                cout << 4*(1+resd) << endl;
+                cout << "Pi es aproximademente: "<< 4*(1+resd) << endl;
             break;
             case 29:
                 cout << "EJERCICIO 29" << endl;
@@ -384,6 +387,7 @@ int main()
                 ran=rand()%101;
                 //cout << ran << endl;
                 cout << "EJERCICIO 30" << endl;
+                cout << "Ingrese un numero" << endl;
                 cin >> A;
                 while(true){
                     if(A>ran) cout << "Menos" << endl;
@@ -602,7 +606,104 @@ int main()
                 }
                 else cout << "No es numero impar" << endl;
             break;
+            case 36:
+                cout << "PROBLEMA 6" << endl;
+                cout << "Ingrese un numero" << endl;
+                cin >> A;
+                con=0;
+                condd=2;
+                if (A!=0) {
+                    if (A!=1){
+                        if (A!=2){
+                            resd=1.0;
+                            for(con=2;con<A; con++) {
+                                resd*=con;
+                                condd=condd+(1.0/resd);
+                            }
+                        }
+                    }
+                    else condd=condd-1;
+                }
+                else condd=condd-2;
+                cout << "El euler de "<< A << " es: "<< condd << endl;
+            break;
+            case 37:
+                cout << "PROBLEMA 7" << endl;
+                cout << "Ingrese un numero" << endl;
+                cin >> A;
+                hh=1, mm=1, res=0, ori=0;
+                for (con=2; res<A; con++){
+                    res=hh+mm;
+                    hh=mm;
+                    mm=res;
+                    if (res<=A){
+                        if (res%2==0){
+                            ori+=res;
+                        }
+                    }
+                }
+                cout << "La suma de los pares de fibonacci es: " << ori << endl;
+            break;
+            case 38:
+                cout << "PROBLEMA 8" << endl;
+                cout << "Ingrese un A, B y C" << endl;
+                cin >> A >> B >> C;
+                ss=0;
+                res=0;
+                next=false;
+                for (con=1;con<C;con++){
+                    if (con%A==0 && con%B==0){
+                        res+=con;
+                        cout << con << " + ";
+                    }
+                    else if (con%A==0){
+                        cout << con << " + ";
+                        res=res+con;
+                    }
+                }
+                for (con=1;con<C;con++){
+                    if (con%B==0 && con%A!=0){
+                        res+=con;
+                        cout << con << " + ";
+                    }
+                }
+                cout << " = " << res-ss;
+                //cout<< "    " << ss << " suma";
+            break;
+            case 39:
+                cout << "PROBLEMA 9" << endl;
+                cout << "Ingrese un numero A" << endl;
+                cin>>A;
+                mm=0;
+                res=0;
+                for(con=10;A>0;){
+                    mm=A%con;
+                    A=A/10;
+                    hh=1;
+                    for(ss=0;ss<mm;ss++)hh*=mm;
+                    res+=hh;
+                }
+                cout << "El resultado de la suma es: " << res <<endl;
 
+            break;
+            case 40:
+                cout << "PROBLEMA 10" << endl;
+                cout << "Ingrese un numero A" << endl;
+                cin>>A;
+                C=0;
+                cond=0;
+                for(con=1,ss=2;con<=A;ss++){
+                    cond=0;
+                    for(hh=1;hh<=ss;hh++){
+                        if(ss%hh==0)cond+=1;
+                    }
+                    if(cond<3){
+                        C=ss;
+                        con+=1;
+                    }
+                }
+                cout << "El primo numero " << A << " es: " << C << endl;;
+            break;
             default:
                 cout << "Ese ejercicio no esta definido\n";
             break;
